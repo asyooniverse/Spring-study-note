@@ -75,13 +75,13 @@ public class ArticleController {
 
     @GetMapping("/articles/{id}/edit")
     public String edit(@PathVariable Long id, Model model){
-
+        // 1.
         Article articleEntity = articleRepository.findById(id).orElse(null);
 
         // 2. 가져온 데이터를 모델에 등록
         model.addAttribute("article", articleEntity);
 
-        // 뷰 페이지 설정
+        // 3. 뷰 페이지 설정
         return "/articles/edit";
     }
 
@@ -101,7 +101,7 @@ public class ArticleController {
             articleRepository.save(articleEntity); // Entity가 DB에 갱신
         }
 
-        // 신. 수정 결과 페이지로 리다이렉트
+        // 3. 수정 결과 페이지로 리다이렉트
         return "redirect:/articles/"+articleEntity.getId();
     }
 }
