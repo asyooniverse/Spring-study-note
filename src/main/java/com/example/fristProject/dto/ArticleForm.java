@@ -1,28 +1,20 @@
 package com.example.fristProject.dto;
 
 import com.example.fristProject.entity.Article;
+import lombok.AllArgsConstructor;
+import lombok.ToString;
 
+@AllArgsConstructor
+@ToString
 public class ArticleForm {
 
-    private String content;
+    private Long id;
     private String title;
-
-    public ArticleForm(String title, String content) {
-        this.title = title;
-        this.content = content;
-    }
-
-    @Override
-    public String toString() {
-        return "ArticleForm{" +
-                "title='" + title + '\'' +
-                ", content='" + content + '\'' +
-                '}';
-    }
+    private String content;
 
     public Article toEntity(){
         // Entity인 Article 객체를 반환
-        return new Article(null, title, content);
+        return new Article(id, title, content);
     }
 
 }
