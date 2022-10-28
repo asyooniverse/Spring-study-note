@@ -39,14 +39,17 @@ public class ArticleService {
         Article article = dto.toEntity();
         Article target = articleRepository.findById(id).orElse(null);
 
+        if(article.getTitle()==null && article.getContent()==null){
+            return null;
+        }
+
         if(target == null || id != article.getId()){
             // 400, 잘못된 요청 응답
             log.info("잘못된 요청! id: {}, article: {}", id, article.toString());
             return null;
         }
 
-        target.patch(article);
-        Article updated = articleRepository.save(target);
+        Article updated = articleRepository.save(article);
         return updated;
     }
 
