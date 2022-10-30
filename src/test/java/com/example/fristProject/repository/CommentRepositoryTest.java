@@ -129,19 +129,19 @@ class CommentRepositoryTest {
         }
 
         /* Case 1: i가 들어간 모든 댓글 조회 */
-        {
-            String word = "i";
-            List<Comment> comments = commentRepository.findByNickname(word);
-            Comment a = new Comment(2L, new Article(4L,"당신의 인생 영화는?","댓글 ㄱ"), word,"아이 엠 샘");
-            Comment b = new Comment(3L, new Article(4L,"당신의 인생 영화는?","댓글 ㄱ"), word,"쇼생크의 탈출");
-            Comment c = new Comment(5L, new Article(5L,"당신의 소울 푸드는?","댓글 ㄱㄱ"), word,"샤브샤브");
-            Comment d = new Comment(6L, new Article(5L,"당신의 소울 푸드는?","댓글 ㄱㄱ"), word,"초밥");
-            Comment e = new Comment(8L, new Article(6L,"당신의 취미는?","댓글 ㄱㄱㄱ"), word,"유튜브");
-            Comment f = new Comment(9L, new Article(6L,"당신의 취미는?","댓글 ㄱㄱㄱ"), word,"독서");
-
-            List<Comment> expected = Arrays.asList(a,b,c,d,e,f);
-
-            assertEquals(expected.toString(), comments.toString(), "i가 들어간 닉네임의 모든 댓글을 출력!");
-        }
+//        {
+//            String word = "i";
+//            List<Comment> comments = commentRepository.findByNickname(word);
+//            Comment a = new Comment(2L, new Article(4L,"당신의 인생 영화는?","댓글 ㄱ"), word,"아이 엠 샘");
+//            Comment b = new Comment(3L, new Article(4L,"당신의 인생 영화는?","댓글 ㄱ"), word,"쇼생크의 탈출");
+//            Comment c = new Comment(5L, new Article(5L,"당신의 소울 푸드는?","댓글 ㄱㄱ"), word,"샤브샤브");
+//            Comment d = new Comment(6L, new Article(5L,"당신의 소울 푸드는?","댓글 ㄱㄱ"), word,"초밥");
+//            Comment e = new Comment(8L, new Article(6L,"당신의 취미는?","댓글 ㄱㄱㄱ"), word,"유튜브");
+//            Comment f = new Comment(9L, new Article(6L,"당신의 취미는?","댓글 ㄱㄱㄱ"), word,"독서");
+//
+//            List<Comment> expected = Arrays.asList(a,b,c,d,e,f);
+//
+//            assertEquals(expected.toString(), comments.toString(), "i가 들어간 닉네임의 모든 댓글을 출력!");
+//        }
     }
 }
